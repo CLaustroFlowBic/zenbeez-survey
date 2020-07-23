@@ -38,6 +38,33 @@ var valueArray = [];
 var counter = 0;
 //the value tracker(not sure if neccassary)
 var value = null;
+questions = 
+     [
+        {
+            "title": "I am just now starting to see how great my relationship was"
+        },
+        {
+            "title": "There aren't many people that understand me completely"
+        }, 
+        {
+            "title": "I feel bad for what my ex-partner is going through"
+        }, 
+        {
+            "title": "I see all the flaws of my partner more clearly than ever"
+        }, 
+        {
+            "title": "Without my partner I feel all empty and alone inside"
+        },
+        {
+            "title": "I now feel ashmaed of myself for even being with my ex-partner"
+        },
+        {
+            "title": "I should have done things differently"
+        },
+        {
+            "title": "Most of the time since the breakup I don't even know what is it that I am feeling"
+        }
+     ];
 
 $(document).ready(function () {
     $("#startSurvey").click(function(){init_survey();});
@@ -51,10 +78,10 @@ async function init_survey() {
     add_buttons();
 
     //get questions
-    var questions = [];
-    await fetch('http://localhost/questions.json')
-    .then(response => response.json())
-    .then(data => questions = data.questions );
+    //var questions = [];
+   // await fetch('http://localhost/questions.json')
+   // .then(response => response.json())
+   // .then(data => questions = data.questions );
     console.log(questions);
     
     
@@ -80,7 +107,6 @@ async function init_survey() {
             value = null;
         }
         
-        
     });
 
     //back button event
@@ -97,7 +123,7 @@ async function init_survey() {
             $("#submit").remove();
             //show the next button
             $("#next").show();
-            //transition title backwards
+            //transition title back one place
             title_transition(questions)
             //decrement progress
             $("progress").attr("value", counter  * 10);
@@ -157,6 +183,9 @@ function handle_next(questions, value) {
         $("#survey-body").append("<button id=\"submit\" class = \"btn btn-success btn-lg \">Submit</button>");
         //hide the next button
         $("#next").hide();
+        title_transition(questions)
+        //change the button state (makes on active if you have already visited)
+        change_button_state();
         //submit button handler
         $("#submit").click(function() {
             //TODO: send data to a backend
@@ -180,7 +209,8 @@ function handle_next(questions, value) {
             $('#chartWrap').html(text);
             $('#chartWrap').removeAttr('hidden');
             myChart = new Chart($('#myChart')[0].getContext('2d'), config);
-            
+            //change title to nexst question
+        
             
             
         });
@@ -188,7 +218,7 @@ function handle_next(questions, value) {
     
     } else {
         $("progress").attr("value", (counter + 1)  * 10);
-        counter + 1 >= questions.length ? counter = questions.length -1 : counter += 1;
+        counter + 1 >= questions.length ? counter = questions.length - 1 : counter += 1;
         
         //$("#title").text(questions[counter].title);
        
