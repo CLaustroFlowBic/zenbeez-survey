@@ -1,0 +1,94 @@
+body{
+    height: 100vh;
+    background-color: #D88C9A;
+}
+@font-face {
+    font-family: "quicksand-light";
+    src: url("Quicksand_Light.otf");
+}
+@font-face {
+    font-family: "quicksand-bold";
+    src: url("Quicksand_Bold.otf");
+}
+.quicksand {
+    font-family: "quicksand-light";
+}
+.quicksand-bold {
+    font-family: "quicksand-bold";
+}
+#inital > * {
+    text-align: center;
+    
+    
+}
+#inital {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+   
+    
+}
+#chartWrap {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+#startSurvey {
+    margin-top: 5%;
+}
+.button-p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    font-size: 16px;
+    font-family: "quicksand-bold";
+    
+   
+}
+
+#survey-body {
+    display:block;
+    padding-top: 10%;
+    margin-top: 10%;
+    width: 50%;
+    margin: auto;
+}
+#title {
+    padding-top: 5%;
+    display: block;
+    height: 96;
+    text-align: center;
+    font-family: "quicksand-bold";
+}
+#buttons {
+    
+    width: 100%;
+}
+#button {
+    
+    width: 12.5%;
+    height: 7.5%;
+    font-size: 30px;
+    
+    
+}
+#survey-control {
+    padding-top: 2.5%;
+}
+#next {
+    float:right;
+}
+#submit {
+    margin: 0 auto;
+}
+
+#progress {
+    width: 100%;
+}
+
+

@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script type = "text/javascript" src="survey.js"></script>
+    
+
+    <link rel= "stylesheet" type= "text/css" href="style.css">
+    
+</head>
+<body>
+    <div id="inital">
+        <h1 id= "inital-title" class = "quicksand">Welcome to the Wellness Survey</h1>
+        <h2 id= "intial-sub" class = "quicksand-bold">By completing this survey you will find out what phase of the breakup you are currently in</h2><br>
+        <h3 id= "intial-body" class = "quicksand-bold">The questions are on a scale of 1 to 8</h3><br>
+        <h3 id= "intial-body" class = "quicksand-bold">1 - the statement I can relate to the most</h3><br>
+        <h3 id= "intial-body" class = "quicksand-bold">8 - the statement I can relate to the least</h3><br>
+        <button id = "startSurvey" class = "button-p btn btn-primary btn-lg">Start Survey</button>
+    </div>
+    <div hidden id= "survey">
+        <h1 id="title"></h1>
+        <div id= "survey-body">
+            <p id= "unselected-error" style="visibility:hidden; color:red;">Please select an option</p>
+            <div id = "buttons" class = "button-group-toggle" data-toggle="buttons">
+            </div>
+            <div id ="survey-control">
+                <button id="back" class = "btn btn-primary btn-lg">back</button>
+                <button id="next" class = "btn btn-primary btn-lg">next</button>
+                <progress id="progress" value="0" max="70"> </progress>
+            </div>
+        </div>
+        
+    </div>
+    <div hidden id= "chartWrap">
+        <p>hello</p>
+    </div>
+</body>
+</html>
